@@ -1,9 +1,11 @@
 /* eslint-disable no-undef */
-import {defineConfig} from 'sanity'
-import {structureTool} from 'sanity/structure'
-import {visionTool} from '@sanity/vision'
-import {schemaTypes} from './schemaTypes'
+import { defineConfig } from 'sanity'
+import { structureTool } from 'sanity/structure'
+import { visionTool } from '@sanity/vision'
+import { schemaTypes } from './schemaTypes'
 import { media } from 'sanity-plugin-media'
+import { documentInternationalization } from '@sanity/document-internationalization'
+import { supportedLanguages } from './config/supportedLanguages'
 
 export default defineConfig({
   name: 'default',
@@ -12,7 +14,16 @@ export default defineConfig({
   projectId: process.env.SANITY_STUDIO_PROJECT_ID,
   dataset: process.env.SANITY_STUDIO_DATASET,
 
-  plugins: [structureTool(), visionTool(),media(),],
+  plugins: [
+    structureTool(),
+    visionTool(),
+    media(),
+    documentInternationalization({
+      // Required configuration
+      supportedLanguages,
+      schemaTypes: ['projectType'],
+    }),
+  ],
 
   schema: {
     types: schemaTypes,

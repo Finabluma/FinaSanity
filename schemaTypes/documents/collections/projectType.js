@@ -26,5 +26,33 @@ export const projectType = defineType({
         slugify,
       },
     }),
+    defineField({
+      title: 'Breve resumen',
+      name: 'description',
+      type: 'text',
+      rows: 3,
+    }),
+    defineField({
+      name: 'image',
+      type: 'image',
+      description: 'Esta es la imagen representativa del proyecto.',
+      options: {
+        hotspot: true,
+      },
+      fields: [
+        defineField({
+          name: 'alt',
+          type: 'string',
+          title: 'Alt text',
+          description: 'Texto alternativo para accesibilidad y SEO',
+        }),
+        defineField({
+          name: 'language',
+          type: 'string',
+          readOnly: true,
+          // hidden: true,
+        }),
+      ],
+    }),
   ],
 })
