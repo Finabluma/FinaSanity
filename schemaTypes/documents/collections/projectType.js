@@ -46,13 +46,13 @@ export const projectType = defineType({
           title: 'Alt text',
           description: 'Texto alternativo para accesibilidad y SEO',
         }),
-        defineField({
-          name: 'language',
-          type: 'string',
-          readOnly: true,
-          // hidden: true,
-        }),
       ],
+    }),
+    defineField({
+      name: 'language',
+      type: 'string',
+      readOnly: true,
+      // hidden: true,
     }),
   ],
 })
