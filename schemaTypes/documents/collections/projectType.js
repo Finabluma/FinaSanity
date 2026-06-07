@@ -49,6 +49,22 @@ export const projectType = defineType({
       ],
     }),
     defineField({
+      name: 'categoria',
+      type: 'reference',
+      to: [{ type: 'projectCategory' }],
+      title: 'Categoría',
+      // validation: (rule) => rule.required().error('Debes asignar una categoría al proyecto.'),
+      options: {
+        filter: ({ document }) => {
+          const lang = document?.language
+          return {
+            filter: 'lang == $lang',
+            params: { lang: lang },
+          }
+        },
+      },
+    }),
+    defineField({
       name: 'language',
       type: 'string',
       readOnly: true,

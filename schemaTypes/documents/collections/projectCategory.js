@@ -46,7 +46,7 @@ export const projectCategory = defineType({
       name: 'language',
       type: 'string',
       readOnly: true,
-      hidden: true,
+      // hidden: true,
     }),
   ],
 })
