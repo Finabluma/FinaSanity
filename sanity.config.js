@@ -6,6 +6,8 @@ import { schemaTypes } from './schemaTypes'
 import { media } from 'sanity-plugin-media'
 import { documentInternationalization } from '@sanity/document-internationalization'
 import { supportedLanguages } from './config/supportedLanguages'
+// import { structure } from './config/structure'
+import { initialValueTemplates } from './config/initialValueTemplates'
 
 export default defineConfig({
   name: 'default',
@@ -21,11 +23,12 @@ export default defineConfig({
     documentInternationalization({
       // Required configuration
       supportedLanguages,
-      schemaTypes: ['projectType'],
+      schemaTypes: ['projectType', 'projectCategory', 'siteSettings'],
     }),
   ],
 
   schema: {
     types: schemaTypes,
+    templates: (prev) => initialValueTemplates(prev),
   },
 })
