@@ -21,7 +21,7 @@ export const siteSettings = defineType({
       name: 'language',
       type: 'string',
       readOnly: true,
-      hidden: true,
+      // hidden: true,
     }),
   ],
 })

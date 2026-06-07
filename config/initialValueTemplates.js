@@ -5,7 +5,7 @@ Document ids which:
 */
 const LOCKED_DOCUMENT_IDS = [
   'media.tag', // Sanity Media Plugin Tags
-  // 'projectType',
+  'siteSettings',
 ]
 
 /*
