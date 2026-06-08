@@ -7,7 +7,12 @@ import { media } from 'sanity-plugin-media'
 import { documentInternationalization } from '@sanity/document-internationalization'
 import { supportedLanguages } from './config/supportedLanguages'
 import { structure } from './config/structure'
-import { initialValueTemplates } from './config/initialValueTemplates'
+import {
+  projectEn,
+  projectEs,
+  categoryEn,
+  categoryEs,
+} from './config/initialValueTemplates'
 
 export default defineConfig({
   name: 'default',
@@ -23,26 +28,44 @@ export default defineConfig({
     documentInternationalization({
       // Required configuration
       supportedLanguages,
-      schemaTypes: ['projectType', 'projectCategory'],
+      schemaTypes: ['projectType', 'projectCategory', 'siteSettings'],
+      languageField: 'language',
     }),
   ],
 
   schema: {
     types: schemaTypes,
-    templates: (prev) => initialValueTemplates(prev),
+
+    templates: (prev) => [projectEn, projectEs, categoryEn, categoryEs],
   },
 
   document: {
-    newDocumentOptions: (prev, { currentUser, creationContext }) => {
+    newDocumentOptions: (prev, { creationContext }) => {
+      // ❌ bloquear creación global
       if (creationContext.type === 'global') {
         // Hide the creation of "settings" documents if the context is global
         return prev.filter(
           (templateItem) =>
             templateItem.templateId !== 'projectType' &&
             templateItem.templateId !== 'projectCategory' &&
+            templateItem.templateId !== 'faviconType' &&
+            templateItem.templateId !== 'siteSettings' &&
             templateItem.templateId !== 'translation.metadata',
         )
       }
+
+      // ✅ filtrar por idioma dentro del panel
+      // if (creationContext.type === 'documentList') {
+      //   const lang = creationContext.params?.lang
+
+      //   if (!lang) return prev
+
+      //   return prev.filter((templateItem) => {
+      //     // solo templates que correspondan al idioma
+      //     return templateItem.templateId.endsWith(`-${lang}`)
+      //   })
+      // }
+
       return prev
     },
   },

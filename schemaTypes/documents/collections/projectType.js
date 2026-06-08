@@ -1,12 +1,20 @@
 import { defineField, defineType } from 'sanity'
-import { ProjectsIcon } from '@sanity/icons'
+import { ProjectsIcon, EarthAmericasIcon } from '@sanity/icons'
 import { slugify } from '../../../lib/slugify'
 export const projectType = defineType({
   name: 'projectType',
   title: 'Proyecto',
   type: 'document',
   icon: ProjectsIcon,
+  groups: [{ name: 'seo', title: 'SEO PAGE', icon: EarthAmericasIcon }],
   fields: [
+    defineField({
+      title: 'Idioma',
+      name: 'language',
+      type: 'string',
+      readOnly: true,
+      // hidden: true,
+    }),
     defineField({
       name: 'title',
       type: 'string',
@@ -65,10 +73,9 @@ export const projectType = defineType({
       },
     }),
     defineField({
-      name: 'language',
-      type: 'string',
-      readOnly: true,
-      // hidden: true,
+      name: 'seo',
+      type: 'pageMetaDataType',
+      group: 'seo',
     }),
   ],
 })

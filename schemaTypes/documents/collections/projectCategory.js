@@ -1,13 +1,20 @@
 import { defineField, defineType } from 'sanity'
-import { SchemaIcon } from '@sanity/icons'
+import { HashIcon } from '@sanity/icons'
 import { slugify } from '../../../lib/slugify'
 
 export const projectCategory = defineType({
   name: 'projectCategory',
   title: 'Categorías',
   type: 'document',
-  icon: SchemaIcon,
+  icon: HashIcon,
   fields: [
+    defineField({
+      title: 'Idioma',
+      name: 'language',
+      type: 'string',
+      readOnly: true,
+      // hidden: true,
+    }),
     defineField({
       name: 'title',
       type: 'string',
@@ -41,12 +48,6 @@ export const projectCategory = defineType({
       name: 'body',
       type: 'array',
       of: [{ type: 'block' }],
-    }),
-    defineField({
-      name: 'language',
-      type: 'string',
-      readOnly: true,
-      // hidden: true,
     }),
   ],
 })

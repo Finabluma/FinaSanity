@@ -18,3 +18,39 @@ export const initialValueTemplates = (prev) => {
     }),
   ]
 }
+
+export const projectEn = {
+  id: 'project-en',
+  title: 'Project (EN)',
+  schemaType: 'projectType',
+  value: {
+    language: 'en',
+  },
+}
+
+export const projectEs = {
+  id: 'project-es',
+  title: 'Proyecto (ES)',
+  schemaType: 'projectType',
+  value: {
+    language: 'es',
+  },
+}
+
+export const categoryEn = {
+  id: 'category-en',
+  title: 'Category (EN)',
+  schemaType: 'projectCategory',
+  value: {
+    language: 'en',
+  },
+}
+
+export const categoryEs = {
+  id: 'category-es',
+  title: 'Categoría (ES)',
+  schemaType: 'projectCategory',
+  value: {
+    language: 'es',
+  },
+}

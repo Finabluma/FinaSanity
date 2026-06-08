@@ -4,13 +4,14 @@ import {
   CogIcon,
   MenuIcon,
   HomeIcon,
+  HashIcon,
   TranslateIcon,
   DocumentIcon,
 } from '@sanity/icons'
 
 export const typeIcons = {
   project: ProjectsIcon,
-  projectCategory: SchemaIcon,
+  projectCategory: HashIcon,
   page: DocumentIcon,
   navigationMenu: MenuIcon,
   homePage: HomeIcon,
