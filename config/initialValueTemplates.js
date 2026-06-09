@@ -27,7 +27,6 @@ export const projectEn = {
     language: 'en',
   },
 }
-
 export const projectEs = {
   id: 'project-es',
   title: 'Proyecto (ES)',
@@ -36,7 +35,6 @@ export const projectEs = {
     language: 'es',
   },
 }
-
 export const categoryEn = {
   id: 'category-en',
   title: 'Category (EN)',
@@ -45,12 +43,28 @@ export const categoryEn = {
     language: 'en',
   },
 }
-
 export const categoryEs = {
   id: 'category-es',
   title: 'Categoría (ES)',
   schemaType: 'projectCategory',
   value: {
     language: 'es',
+  },
+}
+
+export const slideEs = {
+  id: 'slide-es',
+  title: 'Carousel (ES)',
+  schemaType: 'heroSliderType',
+  value: {
+    language: 'es',
+  },
+}
+export const slideEng = {
+  id: 'slide-en',
+  title: 'Carousel (EN)',
+  schemaType: 'heroSliderType',
+  value: {
+    language: 'en',
   },
 }

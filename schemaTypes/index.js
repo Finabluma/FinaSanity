@@ -1,3 +1,4 @@
+import { heroSliderType } from './documents/collections/heroSlider'
 import { projectCategory } from './documents/collections/projectCategory'
 import { projectType } from './documents/collections/projectType'
 import { faviconType } from './documents/site/favicons'
@@ -10,4 +11,5 @@ export const schemaTypes = [
   siteSettings,
   pageMetaDataType,
   faviconType,
+  heroSliderType,
 ]

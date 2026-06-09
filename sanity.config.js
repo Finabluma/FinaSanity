@@ -12,6 +12,8 @@ import {
   projectEs,
   categoryEn,
   categoryEs,
+  slideEs,
+  slideEng,
 } from './config/initialValueTemplates'
 
 export default defineConfig({
@@ -28,15 +30,26 @@ export default defineConfig({
     documentInternationalization({
       // Required configuration
       supportedLanguages,
-      schemaTypes: ['projectType', 'projectCategory', 'siteSettings'],
+      schemaTypes: [
+        'projectType',
+        'projectCategory',
+        'siteSettings',
+        'heroSliderType',
+      ],
       languageField: 'language',
     }),
   ],
 
   schema: {
     types: schemaTypes,
-
-    templates: (prev) => [projectEn, projectEs, categoryEn, categoryEs],
+    templates: (prev) => [
+      projectEn,
+      projectEs,
+      categoryEn,
+      categoryEs,
+      slideEs,
+      slideEng,
+    ],
   },
 
   document: {

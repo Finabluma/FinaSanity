@@ -1,12 +1,12 @@
 import {
   ProjectsIcon,
-  SchemaIcon,
   CogIcon,
   MenuIcon,
   HomeIcon,
   HashIcon,
   TranslateIcon,
   DocumentIcon,
+  PresentationIcon,
 } from '@sanity/icons'
 
 export const typeIcons = {
@@ -17,4 +17,5 @@ export const typeIcons = {
   homePage: HomeIcon,
   siteSettings: CogIcon,
   language: TranslateIcon,
+  carousel: PresentationIcon,
 }
