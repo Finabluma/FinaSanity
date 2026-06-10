@@ -7,6 +7,18 @@ export const structure = (S) =>
     .title('Contenido')
     .items([
       S.listItem()
+        .title('Página Inicio')
+        .id('homeType')
+        .schemaType('homeType')
+        .icon(typeIcons.homePage)
+        .child(
+          S.document()
+            .id('homeType')
+            .schemaType('homeType')
+            .documentId('homeType'),
+        ),
+      S.divider(),
+      S.listItem()
         .title('Proyectos')
         .icon(typeIcons.project)
         .child(

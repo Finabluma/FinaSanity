@@ -35,6 +35,7 @@ export default defineConfig({
         'projectCategory',
         'siteSettings',
         'heroSliderType',
+        'homeType',
       ],
       languageField: 'language',
     }),
