@@ -32,29 +32,7 @@ export const homeType = defineType({
         }),
       ],
     }),
-    // defineField({
-    //   name: 'heroHeader',
-    //   type: 'heroBlockType',
-    // }),
-    // defineField({
-    //   title: 'Carusel',
-    //   name: 'slides',
-    //   type: 'reference',
-    //   to: [{ type: 'heroSliderType' }],
-    //   options: {
-    //     filter: ({ document }) => {
-    //       const language = document?.language
-    //       return {
-    //         filter: 'language == $lang',
-    //         params: { lang: language },
-    //       }
-    //     },
-    //   },
-    //   description:
-    //     'Puedes escoger una galería de imágenes existente o bien crear una nueva.',
-    // }),
   ],
-
   preview: {
     select: {
       title: 'title',

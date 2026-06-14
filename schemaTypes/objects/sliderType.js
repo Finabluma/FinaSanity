@@ -212,15 +212,11 @@ export const sliderType = defineType({
               ],
             }),
           ],
-
-          // =========================
-          // 👁️ SLIDE PREVIEW
-          // =========================
           preview: {
             select: {
               title: 'content.title',
               subtitle: 'content.text',
-              media: 'image  ImageRemoveIcon',
+              media: 'image',
             },
             prepare({ title, subtitle, media }) {
               return {
