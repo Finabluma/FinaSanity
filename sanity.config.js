@@ -48,8 +48,8 @@ export default defineConfig({
       projectEs,
       categoryEn,
       categoryEs,
-      slideEs,
-      slideEng,
+      // slideEs,
+      // slideEng,
     ],
   },
 

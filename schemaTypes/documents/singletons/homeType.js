@@ -1,4 +1,4 @@
-import { defineType, defineField } from 'sanity'
+import { defineType, defineField, defineArrayMember } from 'sanity'
 import { HomeIcon } from '@sanity/icons'
 
 export const homeType = defineType({
@@ -20,22 +20,39 @@ export const homeType = defineType({
       type: 'string',
     }),
     defineField({
-      title: 'Carusel',
-      name: 'slides',
-      type: 'reference',
-      to: [{ type: 'heroSliderType' }],
-      options: {
-        filter: ({ document }) => {
-          const language = document?.language
-          return {
-            filter: 'language == $lang',
-            params: { lang: language },
-          }
-        },
-      },
-      description:
-        'Puedes escoger una galería de imágenes existente o bien crear una nueva.',
+      name: 'blockComponents',
+      title: 'Componentes',
+      type: 'array',
+      of: [
+        defineArrayMember({
+          type: 'heroBlockType',
+        }),
+        defineArrayMember({
+          type: 'sliderType',
+        }),
+      ],
     }),
+    // defineField({
+    //   name: 'heroHeader',
+    //   type: 'heroBlockType',
+    // }),
+    // defineField({
+    //   title: 'Carusel',
+    //   name: 'slides',
+    //   type: 'reference',
+    //   to: [{ type: 'heroSliderType' }],
+    //   options: {
+    //     filter: ({ document }) => {
+    //       const language = document?.language
+    //       return {
+    //         filter: 'language == $lang',
+    //         params: { lang: language },
+    //       }
+    //     },
+    //   },
+    //   description:
+    //     'Puedes escoger una galería de imágenes existente o bien crear una nueva.',
+    // }),
   ],
 
   preview: {

@@ -17,10 +17,11 @@
   "dependencies": {
     "@sanity/document-internationalization": "^6.2.2",
     "@sanity/icons": "^3.7.4",
-    "@sanity/vision": "^5.30.0",
+    "@sanity/vision": "^5.31.1",
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
-    "sanity": "^5.30.0",
+    "sanity": "^5.31.1",
+    "sanity-plugin-internationalized-array": "^5.1.4",
     "sanity-plugin-media": "^4.3.0",
     "styled-components": "^6.1.18"
   },

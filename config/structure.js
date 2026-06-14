@@ -68,32 +68,32 @@ export const structure = (S) =>
               ),
             ]),
         ),
-      S.divider(),
-      S.listItem()
-        .title('Carruseles')
-        .icon(typeIcons.carousel)
-        .child(
-          S.list()
-            .title('Carruseles')
-            .items([
-              ...supportedLanguages.map((lang) =>
-                S.listItem()
-                  .title(prettyTitles.heroSliderType?.[lang.id] || 'Carruseles')
-                  .id(`lang-${lang.id}`)
-                  .icon(lang.icon)
-                  .child(
-                    S.documentTypeList('heroSliderType')
-                      .title(prettyTitles.heroSliderType?.[lang.id])
-                      .filter('_type == "heroSliderType" && language == $lang')
-                      .params({ lang: lang.id }),
-                  ),
-              ),
-              S.divider(),
-              S.documentTypeListItem('heroSliderType').title(
-                'Todas las lenguas',
-              ),
-            ]),
-        ),
+      // S.divider(),
+      // S.listItem()
+      //   .title('Carruseles')
+      //   .icon(typeIcons.carousel)
+      //   .child(
+      //     S.list()
+      //       .title('Carruseles')
+      //       .items([
+      //         ...supportedLanguages.map((lang) =>
+      //           S.listItem()
+      //             .title(prettyTitles.heroSliderType?.[lang.id] || 'Carruseles')
+      //             .id(`lang-${lang.id}`)
+      //             .icon(lang.icon)
+      //             .child(
+      //               S.documentTypeList('heroSliderType')
+      //                 .title(prettyTitles.heroSliderType?.[lang.id])
+      //                 .filter('_type == "heroSliderType" && language == $lang')
+      //                 .params({ lang: lang.id }),
+      //             ),
+      //         ),
+      //         S.divider(),
+      //         S.documentTypeListItem('heroSliderType').title(
+      //           'Todas las lenguas',
+      //         ),
+      //       ]),
+      //   ),
       S.divider(),
       S.listItem()
         .title('Ajustes del sitio')

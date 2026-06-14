@@ -4,7 +4,9 @@ import { projectType } from './documents/collections/projectType'
 import { homeType } from './documents/singletons/homeType'
 import { faviconType } from './documents/site/favicons'
 import { siteSettings } from './documents/site/siteSettings'
-import { pageMetaDataType } from './objects/site/pageMetaData'
+import { heroBlockType } from './objects/heroBlock'
+import { pageMetaDataType } from './objects/pageMetaData'
+import { sliderType } from './objects/sliderType'
 
 export const schemaTypes = [
   homeType,
@@ -13,5 +15,7 @@ export const schemaTypes = [
   siteSettings,
   pageMetaDataType,
   faviconType,
+  heroBlockType,
+  sliderType,
   heroSliderType,
 ]
