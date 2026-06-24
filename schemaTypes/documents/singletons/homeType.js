@@ -20,15 +20,24 @@ export const homeType = defineType({
       type: 'string',
     }),
     defineField({
-      name: 'blockComponents',
-      title: 'Componentes',
+      name: 'sections',
+      title: 'Secciones',
       type: 'array',
       of: [
+        defineArrayMember({
+          type: 'heroSingleType',
+        }),
         defineArrayMember({
           type: 'heroBlockType',
         }),
         defineArrayMember({
-          type: 'sliderType',
+          type: 'textBlockType',
+        }),
+        defineArrayMember({
+          type: 'heroSliderType',
+        }),
+        defineArrayMember({
+          type: 'ctaBlockType',
         }),
       ],
     }),

@@ -1,12 +1,16 @@
-import { heroSliderType } from './documents/collections/heroSlider'
 import { projectCategory } from './documents/collections/projectCategory'
 import { projectType } from './documents/collections/projectType'
 import { homeType } from './documents/singletons/homeType'
 import { faviconType } from './documents/site/favicons'
 import { siteSettings } from './documents/site/siteSettings'
+import { ctaBlockType } from './objects/ctaBlockType'
 import { heroBlockType } from './objects/heroBlock'
+import { heroSingleType } from './objects/heroSingle'
+import { heroSliderType } from './objects/heroSlider'
+import { linkType } from './objects/linkType'
 import { pageMetaDataType } from './objects/pageMetaData'
 import { sliderType } from './objects/sliderType'
+import { textBlockType } from './objects/textBlockType'
 
 export const schemaTypes = [
   homeType,
@@ -15,7 +19,11 @@ export const schemaTypes = [
   siteSettings,
   pageMetaDataType,
   faviconType,
+  linkType,
   heroBlockType,
   sliderType,
+  heroSingleType,
   heroSliderType,
+  textBlockType,
+  ctaBlockType,
 ]

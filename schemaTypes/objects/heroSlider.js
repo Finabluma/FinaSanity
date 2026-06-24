@@ -1,30 +1,12 @@
 import { defineField, defineType, defineArrayMember } from 'sanity'
-import { PresentationIcon, ImageRemoveIcon } from '@sanity/icons'
+import { PresentationIcon, ImagesIcon } from '@sanity/icons'
 
-export const sliderType = defineType({
-  name: 'sliderType',
+export const heroSliderType = defineType({
+  name: 'heroSliderType',
   title: 'Carousel',
   type: 'object',
   icon: PresentationIcon,
   fields: [
-    // =========================
-    // 🎨 VARIANT GLOBAL
-    // =========================
-    defineField({
-      name: 'variant',
-      title: 'Estilo del carousel',
-      type: 'string',
-      initialValue: 'hero',
-      options: {
-        list: [
-          { title: 'Hero', value: 'hero' },
-          { title: 'Card', value: 'card' },
-          { title: 'Fullscreen', value: 'fullscreen' },
-        ],
-        layout: 'radio',
-      },
-      validation: (Rule) => Rule.required(),
-    }),
     defineField({
       name: 'slides',
       title: 'Diapositivas',
@@ -55,12 +37,13 @@ export const sliderType = defineType({
                   type: 'text',
                   rows: 3,
                 }),
+                defineField({
+                  name: 'link',
+                  type: 'linkType',
+                }),
               ],
             }),
-            defineField({
-              name: 'link',
-              type: 'linkType',
-            }),
+
             // =========================
             // 🖼 IMAGE
             // =========================
@@ -91,7 +74,7 @@ export const sliderType = defineType({
               return {
                 title: title || 'Sin título',
                 subtitle: subtitle || 'Sin texto',
-                media: media || ImageRemoveIcon,
+                media: media || ImagesIcon,
               }
             },
           },
@@ -105,14 +88,13 @@ export const sliderType = defineType({
   // =========================
   preview: {
     select: {
-      variant: 'variant',
       slides: 'slides',
     },
-    prepare({ variant, slides }) {
+    prepare({ slides }) {
       const count = slides?.length || 0
 
       return {
-        title: `Carousel (${variant})`,
+        title: `Carousel`,
         subtitle: `${count} slide${count === 1 ? '' : 's'}`,
         media: PresentationIcon,
       }
