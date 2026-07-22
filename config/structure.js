@@ -33,6 +33,7 @@ export const structure = (S) =>
                   .child(
                     S.documentTypeList('projectType')
                       .title(prettyTitles.projectType?.[lang.id])
+                      .apiVersion('v2025-11-01')
                       .filter('_type == "projectType" && language == $lang')
                       .params({ lang: lang.id }),
                   ),
@@ -58,6 +59,7 @@ export const structure = (S) =>
                   .child(
                     S.documentTypeList('projectCategory')
                       .title(prettyTitles.projectCategory?.[lang.id])
+                      .apiVersion('v2025-11-01')
                       .filter('_type == "projectCategory" && language == $lang')
                       .params({ lang: lang.id }),
                   ),
