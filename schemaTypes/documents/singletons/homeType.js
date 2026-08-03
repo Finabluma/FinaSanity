@@ -25,6 +25,14 @@ export const homeType = defineType({
       type: 'array',
       of: [
         defineArrayMember({
+          type: 'reference',
+          to: [
+            {
+              type: 'sloganSequence',
+            },
+          ],
+        }),
+        defineArrayMember({
           type: 'heroSingleType',
         }),
         defineArrayMember({

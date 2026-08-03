@@ -70,6 +70,32 @@ export const structure = (S) =>
               ),
             ]),
         ),
+      S.divider(),
+      S.listItem()
+        .title('Eslóganes')
+        .icon(typeIcons.slogan)
+        .child(
+          S.list()
+            .title('Eslóganes')
+            .items([
+              ...supportedLanguages.map((lang) =>
+                S.listItem()
+                  .title(prettyTitles.sloganSequence?.[lang.id] || 'Eslóganes')
+                  .id(`lang-${lang.id}`)
+                  .icon(lang.icon)
+                  .child(
+                    S.documentTypeList('sloganSequence')
+                      .title(prettyTitles.sloganSequence?.[lang.id])
+                      .filter('_type == "sloganSequence" && language == $lang')
+                      .params({ lang: lang.id }),
+                  ),
+              ),
+              S.divider(),
+              S.documentTypeListItem('sloganSequence').title(
+                'Todas las lenguas',
+              ),
+            ]),
+        ),
       // S.divider(),
       // S.listItem()
       //   .title('Carruseles')

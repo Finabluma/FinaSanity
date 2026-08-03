@@ -7,6 +7,7 @@ import {
   TranslateIcon,
   DocumentIcon,
   PresentationIcon,
+  TextIcon,
 } from '@sanity/icons'
 
 export const typeIcons = {
@@ -18,4 +19,5 @@ export const typeIcons = {
   siteSettings: CogIcon,
   language: TranslateIcon,
   carousel: PresentationIcon,
+  slogan: TextIcon,
 }

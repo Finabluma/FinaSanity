@@ -13,7 +13,7 @@ export const heroSliderType = defineType({
       type: 'array',
 
       validation: (Rule) =>
-        Rule.required().min(1).max(8).error('Debe haber entre 1 y 8 slides'),
+        Rule.required().min(1).error('Debe haber al menos 1 diapositiva'),
 
       of: [
         defineArrayMember({

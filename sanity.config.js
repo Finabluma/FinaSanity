@@ -12,8 +12,10 @@ import {
   projectEs,
   categoryEn,
   categoryEs,
-  slideEs,
-  slideEng,
+  sloganEs,
+  sloganEn,
+  // slideEs,
+  // slideEng,
 } from './config/initialValueTemplates'
 
 export default defineConfig({
@@ -35,6 +37,7 @@ export default defineConfig({
         'projectCategory',
         'siteSettings',
         'heroSliderType',
+        'sloganSequence',
         'homeType',
       ],
       languageField: 'language',
@@ -48,6 +51,8 @@ export default defineConfig({
       projectEs,
       categoryEn,
       categoryEs,
+      sloganEn,
+      sloganEs,
       // slideEs,
       // slideEng,
     ],

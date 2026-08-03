@@ -60,11 +60,27 @@ export const slideEs = {
     language: 'es',
   },
 }
-export const slideEng = {
+export const slideEn = {
   id: 'slide-en',
   title: 'Carousel (EN)',
   schemaType: 'heroSliderType',
   value: {
     language: 'en',
+  },
+}
+export const sloganEn = {
+  id: 'slogan-en',
+  title: 'Slogan (EN)',
+  schemaType: 'sloganSequence',
+  value: {
+    language: 'en',
+  },
+}
+export const sloganEs = {
+  id: 'slogan-es',
+  title: 'Slogan (ES)',
+  schemaType: 'sloganSequence',
+  value: {
+    language: 'es',
   },
 }

@@ -24,10 +24,10 @@ export const heroSingleType = defineType({
           type: 'text',
           rows: 3,
         }),
-        defineField({
-          name: 'link',
-          type: 'linkType',
-        }),
+        // defineField({
+        //   name: 'link',
+        //   type: 'linkType',
+        // }),
       ],
     }),
 

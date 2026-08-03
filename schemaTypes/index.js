@@ -1,5 +1,6 @@
 import { projectCategory } from './documents/collections/projectCategory'
 import { projectType } from './documents/collections/projectType'
+import { sloganSequence } from './documents/collections/sloganSequence'
 import { homeType } from './documents/singletons/homeType'
 import { faviconType } from './documents/site/favicons'
 import { siteSettings } from './documents/site/siteSettings'
@@ -11,6 +12,7 @@ import { linkType } from './objects/linkType'
 import { pageMetaDataType } from './objects/pageMetaData'
 import { sliderType } from './objects/sliderType'
 import { textBlockType } from './objects/textBlockType'
+import { textSequenceType } from './objects/TextSequence'
 
 export const schemaTypes = [
   homeType,
@@ -26,4 +28,6 @@ export const schemaTypes = [
   heroSliderType,
   textBlockType,
   ctaBlockType,
+  textSequenceType,
+  sloganSequence,
 ]
