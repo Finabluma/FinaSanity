@@ -30,19 +30,16 @@ export const homeType = defineType({
             {
               type: 'sloganSequence',
             },
+            {
+              type: 'galleries',
+            },
           ],
         }),
         defineArrayMember({
           type: 'heroSingleType',
         }),
         defineArrayMember({
-          type: 'heroBlockType',
-        }),
-        defineArrayMember({
           type: 'textBlockType',
-        }),
-        defineArrayMember({
-          type: 'heroSliderType',
         }),
         defineArrayMember({
           type: 'ctaBlockType',

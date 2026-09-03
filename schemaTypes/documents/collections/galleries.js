@@ -1,20 +1,18 @@
 import { defineField, defineType } from 'sanity'
-import { TextIcon } from '@sanity/icons'
+import { PresentationIcon } from '@sanity/icons'
 
-export const sloganSequence = defineType({
-  title: 'Esloganes',
+export const galleriesType = defineType({
+  name: 'galleries',
   type: 'document',
-  name: 'sloganSequence',
-  icon: TextIcon,
+  icon: PresentationIcon,
   fields: [
     defineField({
       name: 'title',
-      title: 'Eslogan principal',
       type: 'string',
     }),
     defineField({
-      name: 'textSequence',
-      type: 'textSequenceType',
+      name: 'gallery',
+      type: 'slidesBlock',
     }),
     defineField({
       title: 'Idioma',

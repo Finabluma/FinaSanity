@@ -55,7 +55,7 @@ export const categoryEs = {
 export const slideEs = {
   id: 'slide-es',
   title: 'Carousel (ES)',
-  schemaType: 'heroSliderType',
+  schemaType: 'galleries',
   value: {
     language: 'es',
   },
@@ -63,7 +63,7 @@ export const slideEs = {
 export const slideEn = {
   id: 'slide-en',
   title: 'Carousel (EN)',
-  schemaType: 'heroSliderType',
+  schemaType: 'galleries',
   value: {
     language: 'en',
   },

@@ -1,37 +1,19 @@
 import { defineField, defineType, defineArrayMember } from 'sanity'
-import { PresentationIcon, ImageRemoveIcon } from '@sanity/icons'
+import { ImagesIcon } from '@sanity/icons'
 
-export const sliderType = defineType({
-  name: 'sliderType',
+export const slidesBlock = defineType({
+  name: 'slidesBlock',
   title: 'Carousel',
   type: 'object',
-  icon: PresentationIcon,
+  icon: ImagesIcon,
   fields: [
-    // =========================
-    // 🎨 VARIANT GLOBAL
-    // =========================
-    defineField({
-      name: 'variant',
-      title: 'Estilo del carousel',
-      type: 'string',
-      initialValue: 'hero',
-      options: {
-        list: [
-          { title: 'Hero', value: 'hero' },
-          { title: 'Card', value: 'card' },
-          { title: 'Fullscreen', value: 'fullscreen' },
-        ],
-        layout: 'radio',
-      },
-      validation: (Rule) => Rule.required(),
-    }),
     defineField({
       name: 'slides',
       title: 'Diapositivas',
       type: 'array',
 
       validation: (Rule) =>
-        Rule.required().min(1).max(8).error('Debe haber entre 1 y 8 slides'),
+        Rule.required().min(1).error('Debe haber al menos 1 diapositiva'),
 
       of: [
         defineArrayMember({
@@ -50,17 +32,12 @@ export const sliderType = defineType({
                   validation: (Rule) => Rule.required(),
                 }),
                 defineField({
-                  name: 'text',
-                  title: 'Texto',
-                  type: 'text',
-                  rows: 3,
+                  name: 'link',
+                  type: 'linkType',
                 }),
               ],
             }),
-            defineField({
-              name: 'link',
-              type: 'linkType',
-            }),
+
             // =========================
             // 🖼 IMAGE
             // =========================
@@ -91,7 +68,7 @@ export const sliderType = defineType({
               return {
                 title: title || 'Sin título',
                 subtitle: subtitle || 'Sin texto',
-                media: media || ImageRemoveIcon,
+                media: media || ImagesIcon,
               }
             },
           },
@@ -105,16 +82,15 @@ export const sliderType = defineType({
   // =========================
   preview: {
     select: {
-      variant: 'variant',
       slides: 'slides',
     },
-    prepare({ variant, slides }) {
+    prepare({ slides }) {
       const count = slides?.length || 0
 
       return {
-        title: `Carousel (${variant})`,
+        title: `Carousel`,
         subtitle: `${count} slide${count === 1 ? '' : 's'}`,
-        media: PresentationIcon,
+        media: ImagesIcon,
       }
     },
   },

@@ -96,6 +96,29 @@ export const structure = (S) =>
               ),
             ]),
         ),
+      S.listItem()
+        .title('Diapositivas')
+        .icon(typeIcons.carousel)
+        .child(
+          S.list()
+            .title('Diapositivas')
+            .items([
+              ...supportedLanguages.map((lang) =>
+                S.listItem()
+                  .title(prettyTitles.carousel?.[lang.id] || 'Diapositivas')
+                  .id(`lang-${lang.id}`)
+                  .icon(lang.icon)
+                  .child(
+                    S.documentTypeList('galleries')
+                      .title(prettyTitles.galleries?.[lang.id])
+                      .filter('_type == "galleries" && language == $lang')
+                      .params({ lang: lang.id }),
+                  ),
+              ),
+              S.divider(),
+              S.documentTypeListItem('galleries').title('Todas los carruseles'),
+            ]),
+        ),
       // S.divider(),
       // S.listItem()
       //   .title('Carruseles')
